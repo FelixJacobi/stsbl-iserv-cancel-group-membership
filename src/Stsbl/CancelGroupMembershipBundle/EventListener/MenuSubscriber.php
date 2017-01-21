@@ -93,7 +93,7 @@ class MenuSubscriber implements AdminMenuListenerInterface, EventSubscriberInter
                     'label' => '.icon-door '._('Cancel group membership'),
             ]);
             
-            $item->setLinkAttribute('title', _('Cancel memberships in groups whose membership you are not longer need'));
+            $item->setLinkAttribute('title', _('Cancel memberships in groups which you are not longer need'));
         }
     }
     
