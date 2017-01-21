@@ -52,6 +52,7 @@ class AdminController extends PageController
      * @param Request $request
      * @return array
      * @Route("manage/cancel-membership", name="manage_cancel_membership")
+     * @Route("profile/cancel-membership", name="user_cancel_membership")
      * @Security("is_granted('CAN_CANCEL_MEMBERSHIPS')")
      * @Template()
      */
@@ -67,6 +68,12 @@ class AdminController extends PageController
         } else {
             $bundle = 'IServCoreBundle';
             $menu = $this->get('iserv.menu.managment');
+        }
+        
+        $routeName = $request->get('_route');
+        if ($routeName === 'user_cancel_membership') {
+            $bundle = 'IServCoreBundle';
+            $menu = $this->get('iserv.menu.user_profile');
         }
         
         if ($form->isSubmitted() && $form->isValid()) {

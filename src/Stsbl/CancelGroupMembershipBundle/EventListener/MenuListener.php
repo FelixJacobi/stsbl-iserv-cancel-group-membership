@@ -42,9 +42,7 @@ class MenuListener implements AdminMenuListenerInterface
      * {@inheritdoc}
      */
     public function onBuildAdminMenu(MenuEvent $event) 
-    {
-        $user = $event->getUser();
-        
+    {        
         // check privilege
         if ($event->getAuthorizationChecker()->isGranted(CancelVoter::ATTRIBUTE)) {
             $menu = $event->getMenu();
@@ -61,14 +59,10 @@ class MenuListener implements AdminMenuListenerInterface
     }
     
     /**
-     * Method called on building management menu
-     * 
      * @param MenuEvent $event
      */
     public function onBuildManageMenu(MenuEvent $event)
-    {
-        $user = $event->getUser();
-        
+    {    
         // check privilege
         if ($event->getAuthorizationChecker()->isGranted(CancelVoter::ATTRIBUTE)) {
             $menu = $event->getMenu();
@@ -80,6 +74,24 @@ class MenuListener implements AdminMenuListenerInterface
             
             $item->setExtra('icon', 'door-open-in');
             $item->setExtra('icon_style', 'fugue');
+        }
+    }
+    
+    /**
+     * @param MenuEvent $event
+     */
+    public function onBuildUserProfileMenu(MenuEvent $event)
+    {
+        // check privilege   
+        if ($event->getAuthorizationChecker()->isGranted(CancelVoter::ATTRIBUTE)) {
+            $menu = $event->getMenu();
+            
+            $item = $menu->addChild('cancel-membership', [
+                    'route' => 'user_cancel_membership',
+                    'label' => '.icon-door '._('Cancel group membership'),
+            ]);
+            
+            $item->setLinkAttribute('title', _('Cancel memberships in groups whose membership you are not longer need'));
         }
     }
 }
