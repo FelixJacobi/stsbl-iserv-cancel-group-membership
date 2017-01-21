@@ -18,12 +18,7 @@
     {% endif %}
 {% endblock %}
 
-{% block content %}
-    {# hide title in user profile section for unified design #}
-    {% if app.request.attributes.get('_route') != 'user_cancel_membership' %}
-        <h1>{{ _('Cancel group membership') }}</h1>
-   {% endif %}
-    
+{% block content %}   
     <div class="alert alert-warning">
         <strong>{{ _('Notice:') }}</strong> {{ _('If you want to rebecome a member of a group, where you canceled the membership, an administrator or the group owner has to add you again to the group. You can not undo the proccess by yourself.') }}
     </div>
