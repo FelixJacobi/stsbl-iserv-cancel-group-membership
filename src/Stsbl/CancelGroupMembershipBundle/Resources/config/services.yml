@@ -15,12 +15,9 @@ services:
             - { name: security.voter }
     
     stsbl.cancelgroupmembership.menu:
-        class: Stsbl\CancelGroupMembershipBundle\EventListener\MenuListener # Out MenuListener Class
+        class: Stsbl\CancelGroupMembershipBundle\EventListener\MenuSubscriber # Out MenuSubscriber Class
         tags:
-        #  - { name: kernel.event_listener, event: iserv_portal.menu_main, method: onBuildMainMenu } # Tells IServ about the main menu method
-          - { name: kernel.event_listener, event: iserv_portal.menu_admin, method: onBuildAdminMenu } # Tells IServ about the admin menu method
-          - { name: kernel.event_listener, event: iserv_portal.menu_management, method: onBuildManageMenu } # Tells IServ about the manage menu method
-          - { name: kernel.event_listener, event: iserv_portal.menu_user_profile, method: onBuildProfileMenu } # Tells IServ about the profile menu method
+            - { name: kernel.event_subscriber } # Tells IServ about our subsriber
           
     stsbl.cancelgroupmembership.service.cancel:
         class: Stsbl\CancelGroupMembershipBundle\Service\CancelMembership

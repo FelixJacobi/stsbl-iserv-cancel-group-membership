@@ -1,10 +1,12 @@
 <?php
-// src/Stsbl/CancelGroupmembershipBundle/EventListener/MenuListener.php
+// src/Stsbl/CancelGroupmembershipBundle/EventListener/MenuSubscriber.php
 namespace Stsbl\CancelGroupMembershipBundle\EventListener;
 
 use IServ\AdminBundle\EventListener\AdminMenuListenerInterface;
 use IServ\CoreBundle\Event\MenuEvent;
+use IServ\ManageBundle\Event\MenuEvent as ManageMenuEvent;
 use Stsbl\CancelGroupMembershipBundle\Security\Authorization\Voter\CancelVoter;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /*
  * The MIT License
@@ -36,7 +38,7 @@ use Stsbl\CancelGroupMembershipBundle\Security\Authorization\Voter\CancelVoter;
  * @author Felix Jacobi <felix.jacobi@stsbl.de>
  * @license MIT license <https://opensource.org/licenses/MIT>
  */
-class MenuListener implements AdminMenuListenerInterface
+class MenuSubscriber implements AdminMenuListenerInterface, EventSubscriberInterface
 {
     /**
      * {@inheritdoc}
@@ -94,4 +96,17 @@ class MenuListener implements AdminMenuListenerInterface
             $item->setLinkAttribute('title', _('Cancel memberships in groups whose membership you are not longer need'));
         }
     }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public static function getSubscribedEvents() 
+    {
+        return [
+            MenuEvent::ADMINMENU => 'onBuildAdminMenu',
+            MenuEvent::PROFILEMENU => 'onBuildUserProfileMenu',
+            ManageMenuEvent::MANAGEMENTMENU => 'onBuildManageMenu'
+        ];
+    }
+
 }
