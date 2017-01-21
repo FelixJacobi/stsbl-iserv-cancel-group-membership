@@ -1,4 +1,4 @@
-stsbl-iserv-cancel-group-membership (17.01.22-0) experimental; urgency=medium
+stsbl-iserv-cancel-group-membership (17.01.21-2) experimental; urgency=medium
 
   [ Felix Jacobi ]
   * Fixed typo.
