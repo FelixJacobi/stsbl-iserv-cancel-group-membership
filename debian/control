@@ -10,9 +10,9 @@ Package: stsbl-iserv-cancel-group-membership
 Architecture: all
 Depends: iserv-portal, stsbl-iserv3-maintenance
 Description: Gruppenmitgliedschaften beeenden für IServ
- Erlaubt es ausgewählten Benutzern, die Mitgliedschaften in Gruppen, in den sie derzeit Mitglied sind, zu beenden.
+ Erlaubt es ausgewählten Benutzern, die Mitgliedschaften in Gruppen, in denen sie derzeit Mitglied sind, zu beenden.
  .
  https://it.stsbl.de/wp-content/uploads/2017/01/stsbl-iserv-cancel-group-membership.png
  .
  Der Besitzer der Gruppe, sofern vorhanden, wird über die Beendigung der Mitgliedschaft informiert.
-Tag: suite::iserv:portal, role::plugin, implemented-in::php
+Tag: suite::iserv:portal, role::plugin, implemented-in::php, status::highlighted, status::recommended
