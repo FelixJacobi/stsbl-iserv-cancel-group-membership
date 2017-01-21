@@ -3,7 +3,7 @@
 
 {% block page_title %}
     {{ _('Cancel group membership') }} 
-    {% if bundle == 'IServCoreBundle' %}
+    {% if bundle == 'IServCoreBundle' and app.request.attributes.get('_route') == 'manage_cancel_membership' %}
         - {{ _('Administration') }}
     {% endif %}
 {% endblock %}

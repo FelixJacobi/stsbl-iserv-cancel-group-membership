@@ -60,20 +60,19 @@ class AdminController extends PageController
     {
         $form = $this->getForm();
         $form->handleRequest($request);
+        $routeName = $request->get('_route');
         
         // move page into admin section for administrators
-        if ($this->getUser()->hasRole('ROLE_ADMIN')) {
+        // and move it to the profile section if it is requested via profile
+        if ($this->getUser()->hasRole('ROLE_ADMIN') && $routeName === 'manage_cancel_membership') {
             $bundle = 'IServAdminBundle';
             $menu = null;
+        } else if ($routeName === 'user_cancel_membership') {
+            $bundle = 'IServCoreBundle';
+            $menu = $this->get('iserv.menu.user_profile');
         } else {
             $bundle = 'IServCoreBundle';
             $menu = $this->get('iserv.menu.managment');
-        }
-        
-        $routeName = $request->get('_route');
-        if ($routeName === 'user_cancel_membership') {
-            $bundle = 'IServCoreBundle';
-            $menu = $this->get('iserv.menu.user_profile');
         }
         
         if ($form->isSubmitted() && $form->isValid()) {
@@ -113,9 +112,12 @@ class AdminController extends PageController
             $this->get('iserv.logger')->write(sprintf('Gruppenmitgliedschaft in Gruppe %s beendet', $groupName).$reason);
             
             // if the user may has no more cancelable memberships redirect him to other page to prevent access denied message
-            if ($this->getUser()->hasRole('ROLE_ADMIN')) {
+            if ($this->getUser()->hasRole('ROLE_ADMIN') && $routeName === 'manage_cancel_membership') {
                 // if user is admin, back to admin index
                 return $this->redirect($this->generateUrl('admin_index'));
+            // if called via profile section, back to profile start page
+            } else if ($routeName === 'user_cancel_membership') {
+                return $this->redirect($this->generateUrl('user_profile'));
             } else {
                 // elsewhere to IDesk Start Page
                 return $this->redirect($this->generateUrl('index'));
@@ -124,7 +126,12 @@ class AdminController extends PageController
         
         // track path
         if ($bundle === 'IServCoreBundle') {
-            $this->addBreadcrumb(_('Administration'), $this->generateUrl('manage_index'));
+            if ($routeName === 'user_cancel_membership') {
+                $this->addBreadcrumb(_('Profile'), $this->generateUrl('user_profile'));
+            } else {
+                $this->addBreadcrumb(_('Administration'), $this->generateUrl('manage_index'));
+            }
+            
             $this->addBreadcrumb(_('Cancel group membership'), $this->generateUrl('manage_cancel_membership'));
         } else {
             $this->addBreadcrumb(_('Cancel group membership'), $this->generateUrl('manage_cancel_membership'));
