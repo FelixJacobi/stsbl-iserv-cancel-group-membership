@@ -1,0 +1,26 @@
+# src/Stsbl/CancelGroupMembershipBundle/Resources/config/services.yml
+services:
+    stsbl.cancelgroupmembership.security.management_voter:
+        class: Stsbl\CancelGroupMembershipBundle\Security\Authorization\Voter\ManagementVoter
+        arguments: ["@security.access.decision_manager"]
+        public: false
+        tags:
+            - { name: security.voter }
+    
+    stsbl.cancelgroupmembership.security.cancel_voter:
+        class: Stsbl\CancelGroupMembershipBundle\Security\Authorization\Voter\CancelVoter
+        arguments: ["@security.access.decision_manager", "@doctrine.orm.entity_manager"]
+        public: false
+        tags:
+            - { name: security.voter }
+    
+    stsbl.cancelgroupmembership.menu:
+        class: Stsbl\CancelGroupMembershipBundle\EventListener\MenuListener # Out MenuListener Class
+        tags:
+        #  - { name: kernel.event_listener, event: iserv_portal.menu_main, method: onBuildMainMenu } # Tells IServ about the main menu method
+          - { name: kernel.event_listener, event: iserv_portal.menu_admin, method: onBuildAdminMenu } # Tells IServ about the admin menu method
+          - { name: kernel.event_listener, event: iserv_portal.menu_management, method: onBuildManageMenu } # Tells IServ about the manage menu method
+          
+    stsbl.cancelgroupmembership.service.cancel:
+        class: Stsbl\CancelGroupMembershipBundle\Service\CancelMembership
+        arguments: ["@iserv.shell", "@iserv.security_handler"]

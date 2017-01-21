@@ -1,0 +1,85 @@
+#!/usr/bin/perl -T -CSDAL
+
+use warnings;
+use strict;
+use sessauth;
+use IServ::DB;
+use IServ::User;
+use IServ::Valid;
+use IServ::Tools;
+
+my $m_ip = qr/[\d.:]{1,64}/;
+
+my $login_pwd = $ENV{PASSWORD} // $ENV{SESSPW};
+my ($login_ip) = ($ENV{IP} // "") =~ /^($m_ip)$/;
+my ($login_ip_fwd) = ($ENV{IPFWD} // "") =~ /^($m_ip)$/;
+my ($auth_level, $auth_user);
+undef %ENV;
+
+if (@ARGV < 2)
+{
+    print STDERR "Usage: act_cancel_membership LOGIN GROUP\n";
+    print STDERR "Environment: PASSWORD, IP, IPWD\n";
+    exit 1
+}
+
+my ($login_act, $group) = @ARGV;
+
+sub error($) {
+  my ($error) = @_;
+  print STDERR $error."\n";
+  exit 1;
+}
+
+sub do_auth {
+  if (not defined $login_pwd) {
+    $auth_level = "none";
+  } else {
+    $login_act = IServ::Valid::User $login_act;
+    $login_pwd = IServ::Valid::Passwd $login_pwd;
+    my $res = sessauth::sessauth $login_act, $login_pwd, "scmc";
+    die "wrong session password\n" unless $res =~ /^OK\b/;
+    $auth_level = $res =~ /^OK adm\b/? "admin": "user";
+    $auth_user = $login_act;
+  }
+
+  $IServ::DB::logname = IServ::Tools::pwname $login_act;
+  $IServ::DB::logip = $login_ip;
+  $IServ::DB::logipfwd = $login_ip_fwd;
+}
+
+sub auth_level {
+  do_auth unless defined $auth_level;
+
+  $auth_level;
+}
+
+sub req_priv($) {
+  my ($priv) = @_;
+  error "need privilege $priv\n" 
+  unless IServ::DB::Do "SELECT 1 FROM users_priv
+    WHERE Act = ? AND Privilege = ?", $auth_user, $priv;
+}
+
+sub req_flag($$) {
+  my ($group, $flag) = @_;
+  error "group $group needs flag $flag\n"  
+  unless IServ::DB::Do "SELECT 1 FROM groups_flag
+    WHERE Act = ? AND Flag = ?", $group, $flag;
+}
+
+sub req_auth {
+  error "need auth" 
+  unless (auth_level eq "user") || (auth_level eq "admin");
+}
+
+# permission check
+req_auth;
+req_priv "act_cancel_membership";
+req_flag $group, "canceling_allowed";
+
+# remove user from group
+my ($users, $groups) = map [split ","], $login_act, $group;
+my $sucess = IServ::User::MembersDel @$users, @$groups;
+
+exit 1 unless $sucess;

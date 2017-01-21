@@ -1,0 +1,5 @@
+debian/stsbl-iserv-cancel-group-membership/*
+debian/stsbl-iserv-cancel-group-membership.debhelper.log
+debian/stsbl-iserv-cancel-group-membership.substvars
+debian/files
+debian/debhelper-build-stamp
