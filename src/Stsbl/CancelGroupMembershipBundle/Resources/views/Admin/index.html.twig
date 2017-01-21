@@ -19,10 +19,10 @@
 {% endblock %}
 
 {% block content %}
+    <h1>{{ _('Cancel group membership') }}</h1>
     <div class="alert alert-warning">
         <strong>{{ _('Notice:') }}</strong> {{ _('If you want to rebecome a member of a group, where you canceled the membership, an administrator or the group owner has to add you again to the group. You can not undo the proccess by yourself.') }}
     </div>
-    <h1>{{ _('Cancel group membership') }}</h1>
     <div class="panel panel-default">
         <div class="panel-body">
             {{ form(form) }}
