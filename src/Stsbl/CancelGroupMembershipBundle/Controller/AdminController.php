@@ -13,6 +13,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 /*
  * The MIT License
@@ -168,7 +169,8 @@ class AdminController extends PageController
                 'class' => 'IServCoreBundle:Group',
                 'select2-icon' => 'legacy-act-group',
                 'multiple' => false,
-                'required' => false,
+                'required' => true,
+                'constraints' => [new NotBlank()],
                 'by_reference' => false,
                 'choices' => $choices,
                 'attr' => [
