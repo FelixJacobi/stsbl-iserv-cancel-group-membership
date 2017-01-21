@@ -1,12 +1,5 @@
 # src/Stsbl/CancelGroupMembershipBundle/Resources/config/services.yml
 services:
-    stsbl.cancelgroupmembership.security.management_voter:
-        class: Stsbl\CancelGroupMembershipBundle\Security\Authorization\Voter\ManagementVoter
-        arguments: ["@security.access.decision_manager"]
-        public: false
-        tags:
-            - { name: security.voter }
-    
     stsbl.cancelgroupmembership.security.cancel_voter:
         class: Stsbl\CancelGroupMembershipBundle\Security\Authorization\Voter\CancelVoter
         arguments: ["@security.access.decision_manager", "@doctrine.orm.entity_manager"]
