@@ -103,7 +103,7 @@ class AdminController extends PageController
             
             $groupName = $data['group']->getName();
             
-            $this->get('iserv.logger')->write(sprintf('Gruppenmitgliedsachaft in Gruppe %s beendet', $groupName).$reason);
+            $this->get('iserv.logger')->write(sprintf('Gruppenmitgliedschaft in Gruppe %s beendet', $groupName).$reason);
             
             // if the user may has no more cancelable memberships redirect him to other page to prevent access denied message
             if ($this->getUser()->hasRole('ROLE_ADMIN')) {
