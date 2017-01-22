@@ -14,7 +14,7 @@ msgid "Cancel membership"
 msgstr "Mitgliedschaft beenden"
 
 msgid "Someone has left one of your groups: %s has left %s"
-msgstr "Jemand hat eine ihrer Gruppen verlassen: %s hat %s verlassen"
+msgstr "Jemand hat eine Ihrer Gruppen verlassen: %s hat %s verlassen"
 
 msgid "Cancelling of group membership allowed"
 msgstr "Beendigung der Gruppenmitgliedschaft erlaubt"
