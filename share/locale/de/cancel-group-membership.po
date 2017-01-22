@@ -29,7 +29,7 @@ msgid "Notice:"
 msgstr "Warnung:"
 
 msgid "If you want to rebecome a member of a group, where you canceled the membership, an administrator or the group owner has to add you again to the group. You can not undo the proccess by yourself."
-msgstr "Wenn sie wieder Mitglied einer Gruppen werden wollen, wo sie die Mitgliedschaft beendet haben, muss ein Administrator oder der Gruppenbesitzer sie wieder zur Gruppe hinzufügen. Sie können den Vorgang nicht selber rückgängig machen."
+msgstr "Wenn sie wieder Mitglied einer Gruppen werden wollen, in der sie die Mitgliedschaft beendet haben, muss ein Administrator oder der Gruppenbesitzer sie wieder zur Gruppe hinzufügen. Sie können den Vorgang nicht selber rückgängig machen."
 
 msgid "Cancel memberships in groups which you are not longer need"
 msgstr "Beenden sie Mitgliedschaften in Gruppen, welche sie nicht länger benötigen"
