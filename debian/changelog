@@ -1,3 +1,19 @@
+stsbl-iserv-cancel-group-membership (17.01.22-0) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * Moved notice below the caption.
+  * Added showing of cancel group membership in user profile.
+  * Replaced MenuListener by MenuSubscriber (less stuff in services.yml).
+  * Added integration in profile section.
+  * Fixed form backend validation.
+  * Dropped ManagementVoter hack (Form is now also available via user profile).
+  * Hide h1 title in profile section.
+  * Updated l10n.
+  * Fxied package title.
+  * Removed h1 tag completely.
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Sun, 22 Jan 2017 06:03:00 +0100
+
 stsbl-iserv-cancel-group-membership (17.01.21-2) experimental; urgency=medium
 
   [ Felix Jacobi ]
