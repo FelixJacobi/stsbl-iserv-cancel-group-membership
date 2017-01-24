@@ -1,3 +1,11 @@
+stsbl-iserv-cancel-group-membership (17.01.24-0) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * Fixed l10n.
+  * act_cancel_membership: Fixed service name for sessauth login.
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Tue, 24 Jan 2017 20:05:49 +0100
+
 stsbl-iserv-cancel-group-membership (17.01.22-0) experimental; urgency=medium
 
   [ Felix Jacobi ]
