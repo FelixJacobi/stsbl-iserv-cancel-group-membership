@@ -37,7 +37,7 @@ sub do_auth {
   } else {
     $login_act = IServ::Valid::User $login_act;
     $login_pwd = IServ::Valid::Passwd $login_pwd;
-    my $res = sessauth::sessauth $login_act, $login_pwd, "scmc";
+    my $res = sessauth::sessauth $login_act, $login_pwd, "cancel_membership";
     die "wrong session password\n" unless $res =~ /^OK\b/;
     $auth_level = $res =~ /^OK adm\b/? "admin": "user";
     $auth_user = $login_act;
