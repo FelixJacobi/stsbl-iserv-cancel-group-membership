@@ -10,11 +10,10 @@
 
 {% block javascripts %}
     {{ parent() }}
+    
     {# insert select2 in non admin view #}
     {% if bundle == 'IServCoreBundle' %}
-        {% javascripts output='js/compiled/cgms_select2.js' filter='?uglifyjs2' '@IServCrudBundle/Resources/public/js/select2.js' %}
-            <script type="text/javascript" src="{{ asset_url }}"></script>
-        {% endjavascripts %}
+            <script type="text/javascript" src="{{ asset('@IServCrudBundle/Resources/public/js/select2.js') }}"></script>
     {% endif %}
 {% endblock %}
 

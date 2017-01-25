@@ -97,7 +97,7 @@ class CancelMembership
     }
     
     /**
-     * Gets exit code of last excuted command
+     * Gets exit code of last executed command
      * 
      * @return integer
      */
