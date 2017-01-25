@@ -140,7 +140,7 @@ class AdminController extends PageController
         
         $view = $form->createView();
         
-        return ['bundle' => $bundle, 'menu' => $menu, 'form' => $view];
+        return ['bundle' => $bundle, 'menu' => $menu, 'form' => $view, 'help' => 'https://it.stsbl.de/documentation/mods/stsbl-iserv-cancel-group-membership'];
     }
     
     /**
