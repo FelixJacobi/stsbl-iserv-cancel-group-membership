@@ -1,10 +1,17 @@
+stsbl-iserv-cancel-group-membership (17.01.28-0) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * Fixed insertation of select2.js.
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Sat, 28 Jan 2017 00:53:23 +0100
+
 stsbl-iserv-cancel-group-membership (17.01.26-0) experimental; urgency=medium
 
   [ Felix Jacobi ]
   * Added help link.
   * Syntax improvements.
 
- -- Felix Jacobi <felix.jacobi@stsbl.de>  Thu, 26 Jan 2017 01:00:59 +0100
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Thu, 26 Jan 2017 01:00:59 +0100
 
 stsbl-iserv-cancel-group-membership (17.01.24-0) experimental; urgency=medium
 
