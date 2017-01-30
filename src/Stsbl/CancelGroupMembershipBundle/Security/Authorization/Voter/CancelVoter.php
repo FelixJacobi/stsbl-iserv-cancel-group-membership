@@ -44,9 +44,9 @@ class CancelVoter extends Voter
     const ATTRIBUTE = 'CAN_CANCEL_MEMBERSHIPS';
 
     /**
-     * @var AccessDecsionManagerInterface
+     * @var AccessDecisionManagerInterface
      */
-    private $desisionManager;
+    private $decisionManager;
     
     /*
      * @var EntityManager
@@ -78,7 +78,7 @@ class CancelVoter extends Voter
     protected function voteOnAttribute($attribute, $subject, TokenInterface $token)
     {
         if ($attribute === self::ATTRIBUTE) {
-            if ($this->desisionManager->decide($token, $this->getSupportedPrivileges()) && $this->hasCancelableMemberships($token->getUser())) {
+            if ($this->decisionManager->decide($token, $this->getSupportedPrivileges()) && $this->hasCancelableMemberships($token->getUser())) {
                 return true;
             }
             
