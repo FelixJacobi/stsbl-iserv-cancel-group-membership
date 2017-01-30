@@ -32,7 +32,7 @@ namespace Stsbl\CancelGroupMembershipBundle\Security;
  * @author Felix Jacobi <felix.jacobi@stsbl.de>
  * @license MIT license <https://opensource.org/licenses/MIT>
  */
-class Privilege 
+final class Privilege 
 {
     const CANCEL_MEMBERSHIP = 'PRIV_ACT_CANCEL_MEMBERSHIP';
     
