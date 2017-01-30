@@ -34,7 +34,13 @@ namespace Stsbl\CancelGroupMembershipBundle\Security;
  */
 final class Privilege 
 {
+    /**
+     * Privilege for users that allows to cancel a group membership 
+     */
     const CANCEL_MEMBERSHIP = 'PRIV_ACT_CANCEL_MEMBERSHIP';
     
+    /**
+     * Flag for groups to control which group can be left by the users
+     */
     const FLAG_CANCELING_ALLOWED = 'canceling_allowed';
 }
