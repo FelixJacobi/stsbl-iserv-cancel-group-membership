@@ -58,9 +58,9 @@ class CancelVoter extends Voter
      * 
      * @param AccessDecisionManagerInterface $decisionManager
      */
-    public function __construct(AccessDecisionManagerInterface $desisionManager, EntityManager $em) 
+    public function __construct(AccessDecisionManagerInterface $decisionManager, EntityManager $em) 
     {
-        $this->desisionManager = $desisionManager;
+        $this->decisionManager = $decisionManager;
         $this->em = $em;
     }
     
