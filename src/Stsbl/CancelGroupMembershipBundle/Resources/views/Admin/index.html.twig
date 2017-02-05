@@ -14,7 +14,7 @@
     {# insert select2 in non admin view #}
     {% if bundle == 'IServCoreBundle' %}
         {% if app.environment != 'prod' %}
-            <!-- {{ _self.templateName }} => mail-as-group_form.js -->
+            <!-- {{ _self }} => mail-as-group_form.js -->
         {% endif %}
         {% javascripts output='js/compiled/cancel-membership-select2.js' filter='?uglifyjs2' '@IServCrudBundle/Resources/public/js/select2.js' %}
             <script type="text/javascript" src="{{ asset_url }}"></script>
