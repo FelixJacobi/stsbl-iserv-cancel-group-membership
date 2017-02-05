@@ -195,7 +195,7 @@ class AdminController extends PageController
     }
     
     /**
-     * Notifys the group owner about taht the use rleft the group
+     * Notifys the group owner about that the user left the group
      * 
      * @param Group $group
      */
@@ -203,8 +203,13 @@ class AdminController extends PageController
     {
         $owner = $group->getOwner();
         
-        if(is_null($owner)) {
+        if (is_null($owner)) {
             // no notification, if there is no owner
+            return;
+        }
+        
+        if ($owner === $this->getUser()) {
+            // no notification if the group owner himself left one of his groups
             return;
         }
         
