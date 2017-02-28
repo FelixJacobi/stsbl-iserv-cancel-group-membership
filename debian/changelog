@@ -1,3 +1,19 @@
+stsbl-iserv-cancel-group-membership (17.02.28-0) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * Made privilege container final.
+  * Added some explainations for the constants in the privilege container.
+  * Fixed typo.
+  * Fixed l10n.
+  * Do not notify the group owner, if he leaves one of his own groups.
+  * Replace deprecated _self.templateName with _self.
+  * Replaced wrong sudoers file (broken since 17.01.28-0).
+    Thanks to Bodo Dieckvoß for the bug report!
+
+  iserv: Ein Fehler wurde behoben, der dafür sorgte, dass das Formular zum Beenden von Mitgliedschaften nicht funktionierte. Das Beenden von Gruppenmitgliedschaften sollte jetzt wieder funktionieren.
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Tue, 28 Feb 2017 06:33:10 +0100
+
 stsbl-iserv-cancel-group-membership (17.01.28-0) experimental; urgency=medium
 
   [ Felix Jacobi ]
