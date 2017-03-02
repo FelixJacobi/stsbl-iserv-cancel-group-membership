@@ -57,8 +57,11 @@ sub auth_level {
 sub req_priv($) {
   my ($priv) = @_;
   error "need privilege $priv\n" 
-  unless IServ::DB::Do "SELECT 1 FROM users_priv
-    WHERE Act = ? AND Privilege = ?", $auth_user, $priv;
+  unless IServ::DB::Do "(SELECT 1 FROM users_priv
+    WHERE Act = ? AND Privilege = ?) OR (SELECT 1 
+    FROM role_privileges r WHERE Privilege = ? 
+    AND EXISTS (SELECT 1 FROM user_roles u WHERE 
+    u.Act = ? and u.Role = r.Role))", $auth_user, $priv, $priv, $auth_user;
 }
 
 sub req_flag($$) {
