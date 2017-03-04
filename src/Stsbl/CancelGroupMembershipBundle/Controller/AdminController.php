@@ -169,7 +169,7 @@ class AdminController extends PageController
                 'class' => 'IServCoreBundle:Group',
                 'select2-icon' => 'legacy-act-group',
                 'multiple' => false,
-                'required' => true,
+                'required' => false,
                 'constraints' => [new NotBlank()],
                 'by_reference' => false,
                 'choices' => $choices,
