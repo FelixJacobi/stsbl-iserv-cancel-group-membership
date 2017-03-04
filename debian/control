@@ -15,4 +15,4 @@ Description: Gruppenmitgliedschaften beenden für IServ
  https://it.stsbl.de/wp-content/uploads/2017/01/stsbl-iserv-cancel-group-membership.png
  .
  Der Besitzer der Gruppe, sofern vorhanden, wird über die Beendigung der Mitgliedschaft informiert.
-Tag: suite::iserv:portal, role::plugin, implemented-in::php, status::highlighted, status::recommended
+Tag: suite::iserv:portal, role::plugin, implemented-in::php, status::recommended
