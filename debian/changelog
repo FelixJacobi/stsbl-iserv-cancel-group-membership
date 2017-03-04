@@ -1,3 +1,14 @@
+stsbl-iserv-cancel-group-membership (17.03.04-0) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * Added support for assigning privilege to roles.
+  * act_cancel_membership: Fixed sql statement.
+  * Disabled required attribute for group selection to prevent prefilling of it.
+
+  iserv: Das Recht zum Beenden von Gruppenmitgliedschaften funktioniert nun auch, wenn es über Rollen statt Gruppen zugewiesen wird.
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Sun, 05 Mar 2017 00:04:31 +0100
+
 stsbl-iserv-cancel-group-membership (17.02.28-0) experimental; urgency=medium
 
   [ Felix Jacobi ]
