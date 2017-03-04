@@ -1,3 +1,10 @@
+stsbl-iserv-cancel-group-membership (17.03.05-0) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * Removed highlighted status.
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Sun, 05 Mar 2017 00:14:07 +0100
+
 stsbl-iserv-cancel-group-membership (17.03.04-0) experimental; urgency=medium
 
   [ Felix Jacobi ]
