@@ -8,7 +8,7 @@ Homepage: https://it.stsbl.de/documentation/mods/stsbl-iserv-cancel-group-member
 
 Package: stsbl-iserv-cancel-group-membership
 Architecture: all
-Depends: iserv-portal, stsbl-iserv3-maintenance
+Depends: iserv-portal, stsbl-iserv3-maintenance, stsbl-iserv-perl-lib
 Description: Gruppenmitgliedschaften beenden für IServ
  Erlaubt es ausgewählten Benutzern, die Mitgliedschaften in Gruppen, in denen sie derzeit Mitglied sind, zu beenden.
  .
