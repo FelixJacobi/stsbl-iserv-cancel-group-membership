@@ -1,3 +1,11 @@
+stsbl-iserv-cancel-group-membership (17.05.02-0) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * act_cancel_membership: Rewritten using stsbl-iserv-perl-lib.
+  * Added dependency on stsbl-iserv-perl-lib.
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Tue, 02 May 2017 20:34:54 +0200
+
 stsbl-iserv-cancel-group-membership (17.03.05-0) experimental; urgency=medium
 
   [ Felix Jacobi ]
