@@ -51,7 +51,7 @@ class MenuSubscriber implements AdminMenuListenerInterface, EventSubscriberInter
             $child = $menu->getChild('users');
             
             $item = $child->addChild('admin_cancel_membership', [
-                'route' => 'manage_cancel_membership',
+                'route' => 'admin_cancel_membership',
                 'label' => _('Cancel group membership')
             ]);
             

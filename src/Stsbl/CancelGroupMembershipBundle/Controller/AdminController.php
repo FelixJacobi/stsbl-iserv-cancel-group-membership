@@ -52,8 +52,9 @@ class AdminController extends PageController
      *
      * @param Request $request
      * @return array
-     * @Route("manage/cancel-membership", name="manage_cancel_membership")
-     * @Route("profile/cancel-membership", name="user_cancel_membership")
+     * @Route("/manage/cancel-membership", name="manage_cancel_membership")
+     * @Route("/admin/cancel-membership", name="admin_cancel_membership")
+     * @Route("/profile/cancel-membership", name="user_cancel_membership")
      * @Security("is_granted('CAN_CANCEL_MEMBERSHIPS')")
      * @Template()
      */
@@ -65,7 +66,7 @@ class AdminController extends PageController
         
         // move page into admin section for administrators
         // and move it to the profile section if it is requested via profile
-        if ($this->getUser()->hasRole('ROLE_ADMIN') && $routeName === 'manage_cancel_membership') {
+        if ($routeName === 'admin_cancel_membership') {
             $bundle = 'IServAdminBundle';
             $menu = null;
         } else if ($routeName === 'user_cancel_membership') {
