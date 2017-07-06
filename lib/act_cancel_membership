@@ -8,7 +8,6 @@ use Stsbl::IServ::IO;
 use Stsbl::IServ::Security;
 
 my $m_ip = qr/[\d.:]{1,64}/;
-my $m_act = qr/^([a-z][a-z0-9._-]*)$/;
 
 my $login_pwd = $ENV{PASSWORD} // $ENV{SESSPW};
 my ($login_ip) = ($ENV{IP} // "") =~ /^($m_ip)$/;
