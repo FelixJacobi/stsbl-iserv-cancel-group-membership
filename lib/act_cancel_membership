@@ -3,10 +3,12 @@
 use warnings;
 use strict;
 use IServ::User;
+use IServ::Valid;
 use Stsbl::IServ::IO;
 use Stsbl::IServ::Security;
 
 my $m_ip = qr/[\d.:]{1,64}/;
+my $m_act = qr/^([a-z][a-z0-9._-]*)$/;
 
 my $login_pwd = $ENV{PASSWORD} // $ENV{SESSPW};
 my ($login_ip) = ($ENV{IP} // "") =~ /^($m_ip)$/;
@@ -22,6 +24,10 @@ if (@ARGV < 2)
 }
 
 my ($login_act, $group) = @ARGV;
+
+# untaint
+$login_act = IServ::Valid::User $login_act;
+$group = IServ::Valid::Group $group;
 
 set_ips $login_ip, $login_ip_fwd;
 set_credentials $login_act, $login_pwd;
