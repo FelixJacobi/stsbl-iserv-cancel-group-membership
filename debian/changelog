@@ -1,3 +1,18 @@
+stsbl-iserv-cancel-group-membership (17.06.07-0) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * Updated build deps and rules.
+  * Fixed build deps.
+  * Untaint ARGV variables. Thanks to Bodo Dieckvoß for the bug report!
+  * Removed uneeded regular expression.
+  * Updated build rules.
+
+  iserv: Die Fehlermeldung "Insecure dependency in unlink while running with
+    -T switch at /usr/share/perl5/IServ/Share.pm line 123.", die während des
+    Beendens einer Gruppenmitglieschaft erschien, tritt nun nicht mehr auf.
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Fri, 07 Jul 2017 09:05:01 +0200
+
 stsbl-iserv-cancel-group-membership (17.05.23-0) experimental; urgency=medium
 
   [ Felix Jacobi ]
