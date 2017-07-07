@@ -1,4 +1,4 @@
-stsbl-iserv-cancel-group-membership (17.06.07-0) experimental; urgency=medium
+stsbl-iserv-cancel-group-membership (17.07.07-0) experimental; urgency=medium
 
   [ Felix Jacobi ]
   * Updated build deps and rules.
