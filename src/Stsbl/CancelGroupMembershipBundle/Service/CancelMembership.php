@@ -51,7 +51,10 @@ class CancelMembership
     private $securityHandler;
 
     /**
-     * The constructor
+     * The constructor.
+     * 
+     * @param Shell $shell
+     * @param SecurityHandler $securityHandler
      */
     public function __construct(Shell $shell, SecurityHandler $securityHandler) 
     {
