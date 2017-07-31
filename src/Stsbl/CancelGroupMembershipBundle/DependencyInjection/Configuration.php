@@ -40,6 +40,21 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 class Configuration implements ConfigurationInterface
 {
     /**
+     * @var string
+     */
+    private $alias;
+
+    /**
+     * The constructor.
+     *
+     * @param string $alias
+     */
+    public function __construct($alias)
+    {
+        $this->alias = $alias;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function getConfigTreeBuilder()
