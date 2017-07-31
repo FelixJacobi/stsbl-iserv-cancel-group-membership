@@ -1,4 +1,4 @@
-# TRANSLATION CATALOG OF STSBL-ISERV3-INTERNET.
+# TRANSLATION CATALOG OF STSBL-ISERV-CANCEL-GROUP-MEMBERSHIP.
 # Copyright (C) 2017 Stadtteilschule Blankenese
 # This file is distributed under the same license as the stsbl-iserv-cancel-group-membership package.
 # Stadtteilschule Blankenese <repository@stsbl.de>, 2017.
