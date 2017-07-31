@@ -1,0 +1,105 @@
+# TRANSLATION CATALOG OF STSBL-ISERV3-INTERNET.
+# Copyright (C) 2017 Stadtteilschule Blankenese
+# This file is distributed under the same license as the stsbl-iserv-cancel-group-membership package.
+# Stadtteilschule Blankenese <repository@stsbl.de>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: stsbl-iserv-cancel-group-membership\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-31 18:41+0200\n"
+"PO-Revision-Date: 2017-05-07 14:52+0200\n"
+"Last-Translator: root <repository@stsbl.de>\n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: /tmp/cancel-group-membership-StsblCancelGroupMembershipBundle.twig.php:55
+#: src/Stsbl/CancelGroupMembershipBundle/Resources/translations/messages.php:44
+#: src/Stsbl/CancelGroupMembershipBundle/EventListener/MenuSubscriber.php:55
+#: src/Stsbl/CancelGroupMembershipBundle/EventListener/MenuSubscriber.php:74
+#: src/Stsbl/CancelGroupMembershipBundle/EventListener/MenuSubscriber.php:93
+#: src/Stsbl/CancelGroupMembershipBundle/Controller/AdminController.php:137
+#: src/Stsbl/CancelGroupMembershipBundle/Controller/AdminController.php:139
+msgid "Cancel group membership"
+msgstr "Gruppenmitgliedschaft beenden"
+
+#: /tmp/cancel-group-membership-StsblCancelGroupMembershipBundle.twig.php:62
+#: src/Stsbl/CancelGroupMembershipBundle/Controller/AdminController.php:134
+msgid "Administration"
+msgstr "Verwaltung"
+
+#: /tmp/cancel-group-membership-StsblCancelGroupMembershipBundle.twig.php:144
+msgid "Notice:"
+msgstr "Warnung:"
+
+#: /tmp/cancel-group-membership-StsblCancelGroupMembershipBundle.twig.php:146
+msgid ""
+"If you want to rebecome a member of a group, where you canceled the "
+"membership, an administrator or the group owner has to add you again to the "
+"group. You can not undo the proccess by yourself."
+msgstr ""
+"Wenn Sie wieder Mitglied einer Gruppen werden wollen, in der Sie die "
+"Mitgliedschaft beendet haben, muss ein Administrator oder der "
+"Gruppenbesitzer Sie wieder zur Gruppe hinzufügen. Sie können den Vorgang "
+"nicht selber rückgängig machen."
+
+#: src/Stsbl/CancelGroupMembershipBundle/Resources/translations/messages.php:34
+#: src/Stsbl/CancelGroupMembershipBundle/Resources/translations/messages.php:38
+msgid "User/group management"
+msgstr "Benutzer-/Gruppenverwaltung"
+
+#: src/Stsbl/CancelGroupMembershipBundle/Resources/translations/messages.php:35
+msgid "Cancel group memberships"
+msgstr "Gruppenmitgliedschaften beenden"
+
+#: src/Stsbl/CancelGroupMembershipBundle/Resources/translations/messages.php:39
+msgid "Cancelling of group membership allowed"
+msgstr "Beendigung der Gruppenmitgliedschaft erlaubt"
+
+#: src/Stsbl/CancelGroupMembershipBundle/Resources/translations/messages.php:40
+msgid ""
+"Remove this group flag from groups, where the users should not supposed to "
+"cancel their membership."
+msgstr ""
+"Entfernen Sie dieses Gruppenmerkmal von Gruppen, wo die Benutzer ihre "
+"Mitgliedschaft nicht selbst beenden können sollen."
+
+#: src/Stsbl/CancelGroupMembershipBundle/Resources/translations/messages.php:43
+#, php-format
+msgid "Someone has left one of your groups: %s has left %s"
+msgstr "Jemand hat eine Ihrer Gruppen verlassen: %s hat %s verlassen"
+
+#: src/Stsbl/CancelGroupMembershipBundle/EventListener/MenuSubscriber.php:96
+msgid "Cancel memberships in groups which you are not longer need"
+msgstr ""
+"Beenden Sie Mitgliedschaften in Gruppen, welche Sie nicht länger benötigen"
+
+#: src/Stsbl/CancelGroupMembershipBundle/Controller/AdminController.php:132
+msgid "Profile"
+msgstr "Profil"
+
+#: src/Stsbl/CancelGroupMembershipBundle/Controller/AdminController.php:169
+msgid "Group"
+msgstr "Gruppe"
+
+#: src/Stsbl/CancelGroupMembershipBundle/Controller/AdminController.php:178
+msgid "Select the group where you want to cancel the membership."
+msgstr ""
+"Wählen Sie die Gruppe aus, in der Sie die Mitgliedschaft beenden wollen."
+
+#: src/Stsbl/CancelGroupMembershipBundle/Controller/AdminController.php:182
+msgid "Reason (optional)"
+msgstr "Begründung (optional)"
+
+#: src/Stsbl/CancelGroupMembershipBundle/Controller/AdminController.php:185
+msgid "Optionally explain, why you don't need the membership anymore."
+msgstr ""
+"Erklären Sie optional, warum Sie die Mitgliedschaft nicht weiter benötigen."
+
+#: src/Stsbl/CancelGroupMembershipBundle/Controller/AdminController.php:189
+msgid "Cancel membership"
+msgstr "Mitgliedschaft beenden"
