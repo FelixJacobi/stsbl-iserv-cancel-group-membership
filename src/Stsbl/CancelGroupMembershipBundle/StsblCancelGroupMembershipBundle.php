@@ -3,8 +3,10 @@
 namespace Stsbl\CancelGroupMembershipBundle;
 
 use IServ\CoreBundle\Routing\AutoloadRoutingBundleInterface;
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Stsbl\CancelGroupMembershipBundle\DependencyInjection\Compiler\NotificationCompilerPass;
 use Stsbl\CancelGroupMembershipBundle\DependencyInjection\StsblCancelGroupMembershipExtension;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /*
  * The MIT License
@@ -42,5 +44,15 @@ class StsblCancelGroupMembershipBundle extends Bundle implements AutoloadRouting
     public function getContainerExtension() 
     {
         return new StsblCancelGroupMembershipExtension();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function build(ContainerBuilder $container)
+    {
+        parent::build($container);
+
+        $container->addCompilerPass(new NotificationCompilerPass());
     }
 }
