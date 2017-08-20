@@ -1,3 +1,10 @@
+stsbl-iserv-cancel-group-membership (17.08.20-0) experimental; urgency=medium
+
+  * Fixed too long extended description.
+  * Fixed registering of compiler pass.
+
+ -- Felix Jacobi <felix.jacobi@iserv.eu>  Sun, 20 Aug 2017 14:18:02 +0200
+
 stsbl-iserv-cancel-group-membership (17.07.31-0) experimental; urgency=medium
 
   [ Felix Jacobi ]
