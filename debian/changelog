@@ -1,3 +1,16 @@
+stsbl-iserv-cancel-group-membership (17.11.07-1) experimental; urgency=medium
+
+  * Removed deprecated debian/intall.
+  * Transformed package into legacy package which installs iserv-grouprequest
+
+  iserv: Das Modul "Gruppenmitgliedschaften beenden" wird nicht weiter
+    als eigenständiges Modul fortgeführt, die Funktionalität wurde in das
+    offizielle Gruppenbewerbungsmodul von IServ übernommen, dieses wurde
+    automatisch auf Ihrem Server installiert und hat das alte Modul ersetzt.
+    Die Konfiguration wurde automatisch übernommen.
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Tue, 07 Nov 2017 14:59:54 +0100
+
 stsbl-iserv-cancel-group-membership (17.08.20-0) experimental; urgency=medium
 
   * Fixed too long extended description.
