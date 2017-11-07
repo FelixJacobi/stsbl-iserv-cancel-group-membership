@@ -7,12 +7,12 @@ Test 'mark iserv-grouprequest as manually installed'
 
 # Remove old stsbl-iserv-cancel-groupmembership package, but run news_changelog
 # before to import changelog notice
-Test 'uninstall legacy package stsbl-iserv-cancel-groupmembership'
+Test 'uninstall legacy package stsbl-iserv-cancel-group-membership'
   [[ ! $(dpkg-query --showformat='${Status}\n' --show \
     'stsbl-iserv-cancel-groupmembership' 2> /dev/null | \
     grep 'install ok installed') ]]
   ---
   /usr/lib/iserv/news_changelog &&
-  /usr/lib/iserv/aptitude_auto remove stsbl-iserv-cancel-groupmembership &&
+  /usr/lib/iserv/aptitude_auto remove stsbl-iserv-cancel-group-membership &&
   (iservchk -a system apache iserv3 || true)
 
