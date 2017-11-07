@@ -1,11 +1,4 @@
-Test "resolve conflict with iserv3-grouprequest"
-  dpkg-query --showformat='${Status}\n' --show \
-    'iserv3-grouprequest' 2> /dev/null | \
-    grep 'install ok installed' &&
-  dpkg-query --showformat='${Status}\n' --show \
-    'iserv-grouprequest' 2> /dev/null | \
-    grep 'install ok installed' &&  
-  ---
+Shell "resolve conflict with iserv3-grouprequest"
   /usr/lib/iserv/aptitude_auto -o Dpkg::Options::="--force-overwrite" install \
-     stsbl-iserv-cancel-group-membership iserv-grouprequest iserv3-grouprequest
+     stsbl-iserv-cancel-group-membership iserv-grouprequest iserv3-grouprequest 1>&2
 
