@@ -9,7 +9,7 @@ Test 'mark iserv-grouprequest as manually installed'
 # before to import changelog notice
 Test 'uninstall legacy package stsbl-iserv-cancel-group-membership'
   [[ ! $(dpkg-query --showformat='${Status}\n' --show \
-    'stsbl-iserv-cancel-groupmembership' 2> /dev/null | \
+    'stsbl-iserv-cancel-group-membership' 2> /dev/null | \
     grep 'install ok installed') ]]
   ---
   /usr/lib/iserv/news_changelog &&
