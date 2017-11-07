@@ -1,3 +1,9 @@
+stsbl-iserv-cancel-group-membership (17.11.07-4) experimental; urgency=medium
+
+  * Added conflict resolving with iserv-grouprequest
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Tue, 07 Nov 2017 15:50:30 +0100
+
 stsbl-iserv-cancel-group-membership (17.11.07-3) experimental; urgency=medium
 
   * Fixed iservchk test [amend]
